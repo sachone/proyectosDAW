@@ -45,9 +45,9 @@
         <!-- Fonts -->
         <link href='http://fonts.googleapis.com/css?family=Roboto:100' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Dancing+Script:700' rel='stylesheet' type='text/css'>
-        
+
         <!-- <link rel="stylesheet" href="css/jquery-ui.css"> -->
-        
+
         <!-- FAlTA --><link rel="stylesheet" href="css/animate.css">
         <link rel="stylesheet" href="css/bootstrapValidator.min.css">
         <link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css"  />
@@ -64,32 +64,37 @@
         <![endif]-->
 
         <!-- Fixed navbar -->
-        <div class="navbar navbar-inverse navbar-fixed-top">
+
+
+        <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
-                    <a class="navbar-brand btn btn-inverse view" href="jsp?ob=usuario&op=menu"><i class="icon-home"></i></a>
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a id="app" class="navbar-brand" href="jsp"><%=AppInformationHelper.getAppName()%></a>
+                    <a class="navbar-brand" href="jsp?ob=usuario&op=inicio">Proyectos DAW</a>
                 </div>
-                <div class="collapse navbar-collapse">
 
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <%if (user != null) {%>
-                        <jsp:include page="jsp/menuSuperior.jsp" /> 
-                        <% }%>
+                        <li class="active"><a href="jsp?ob=usuario&op=menu">Inicio <span class="sr-only">(current)</span></a></li>
                     </ul>
+                    <%if (user != null){%>
+                    <ul class="nav navbar-nav navbar-left">
+                        <jsp:include page="jsp/menuSuperior.jsp" />
+                    </ul>
+                    <%}%>
                     <ul class="nav navbar-nav navbar-right">
                         <jsp:include page="jsp/usuario/infologin.jsp" />
                     </ul>
-
-                </div><!--/.nav-collapse -->
-            </div>
-        </div>
-
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
 
         <% if (user != null) {%>
 
@@ -109,7 +114,9 @@
             <div class="col-md-12" id="contenidoParseado"></div>   
         </div>
         <div class="row">
-            <div class="col-md-12"><hr><footer><p class="pull-right">&copy; <%=EstadoHelper.getAutor()%>: <%=EstadoHelper.getMailAutor()%> (<%=EstadoHelper.getAnyo()%>) - <%=EstadoHelper.getLicenciaLink()%></p></footer></div> 
+            <div class="col-md-12">
+                <hr><footer><p class="pull-right">&copy; <%=EstadoHelper.getAutor()%>: (<%=EstadoHelper.getAnyo()%>) - <%=EstadoHelper.getLicenciaLink()%></p></footer>
+            </div> 
         </div>
 
 
@@ -127,7 +134,9 @@
             <div class="col-md-12" id="contenidoParseado"></div>   
         </div>
         <div class="row">
-            <div class="col-md-12"><hr><footer><p class="pull-right">&copy; <%=EstadoHelper.getAutor()%>: <%=EstadoHelper.getMailAutor()%> (<%=EstadoHelper.getAnyo()%>) - <%=EstadoHelper.getLicenciaLink()%></p></footer></div>   
+            <div class="col-md-12">
+                <hr><footer><p class="pull-right">&copy; <%=EstadoHelper.getAutor()%>: (<%=EstadoHelper.getAnyo()%>) - <%=EstadoHelper.getLicenciaLink()%></p></footer>
+            </div>   
         </div>
 
 
@@ -148,7 +157,7 @@
         <script type="text/javascript"  src="./js/vendor/bootstrapValidator.min.js"></script>
         <script type="text/javascript"  src="./js/vendor/language/es_ES.js"></script>
         <script type="text/javascript"  src="./js/vendor/creole-parser.js"></script>
-        
+
         <script type="text/javascript"  src="./js/vendor/metro.min.js"></script>
 
 

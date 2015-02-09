@@ -28,13 +28,13 @@
     }
 %>
 </div>-->
-<div id="intro">
-    <h1>
-      PROYECTOS DAW
-    </h1>
+
+
+<div class="intro">
+    
 </div>
 
-<div class="row">
+<div class="row informaInicio">
     <div class="col-md-8">
         <div class="row">
             <div class="col-md-6">

@@ -30,6 +30,7 @@
     --%>
     <a href="#"> <i class="icon-user"></i> <%=usuario%> (<%=level%>)</a>
 </li>
-<li><a href="jsp?ob=usuario&op=logout">Salir</a></li>
+
+<li><a href="jsp?ob=usuario&op=logout">Log Out</a></li>
     <%} else {%>
-<li><a href="jsp?op=login01&ob=usuario">Entrar</a></li><%}%>
+<li><a href="jsp?op=login01&ob=usuario">Log In</a></li><%}%>
