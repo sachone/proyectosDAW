@@ -30,8 +30,7 @@
 </div>-->
 <div id="intro">
     <h1>
-        Voreal<br/>
-        <span>Luce como tu quieras</span>
+      PROYECTOS DAW
     </h1>
 </div>
 

@@ -32,10 +32,6 @@ public class UsuarioBeanGenSpImpl extends BeanGenImpl implements BeanInterface {
     @Expose(deserialize = false)
     private TipousuarioBeanGenSpImpl obj_tipousuario = null;
     @Expose
-    private String nombrecomp = "";
-    @Expose
-    private String dni = "";
-    @Expose
     private String skin = "";
 
     public String getLogin() {
@@ -76,22 +72,6 @@ public class UsuarioBeanGenSpImpl extends BeanGenImpl implements BeanInterface {
 
     public void setSkin(String skin) {
         this.skin = skin;
-    }
-
-    public String getNombrecomp() {
-        return nombrecomp;
-    }
-
-    public void setNombrecomp(String nombrecomp) {
-        this.nombrecomp = nombrecomp;
-    }
-
-    public String getDni() {
-        return dni;
-    }
-
-    public void setDni(String dni) {
-        this.dni = dni;
     }
 
 }
