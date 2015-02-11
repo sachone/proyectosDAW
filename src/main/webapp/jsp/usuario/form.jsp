@@ -41,16 +41,6 @@
         </div>
     </div>
     
-    <div class="form-group">
-        <label class="col-sm-2 control-label" for="obj_estado_id">Estado: </label> 
-        <div class="col-sm-2">              
-            <input readonly="true"  class="form-control"  id="obj_estado_id" class="input-mini" name="id_estado" type="text" size="5" maxlength="5" />  
-        </div>
-        <div class="col-sm-1">              
-            <a class="btn btn-primary btn-sm" id="obj_estado_button" href="#"><i class="glyphicon glyphicon-search"></i></a>
-        </div>        
-        <label class="col-sm-7" for="obj_estado_desc" id="obj_estado_desc"></label>                     
-    </div>
 
     <div class="form-group">
         <label class="col-sm-2 control-label" for="obj_tipousuario_id">Tipo de usuario: </label> 
@@ -61,20 +51,6 @@
             <a class="btn btn-primary btn-sm" id="obj_tipousuario_button" href="#"><i class="glyphicon glyphicon-search"></i></a>
         </div>        
         <label class="col-sm-7" for="obj_usuario_desc" id="obj_tipousuario_desc"></label>                     
-    </div>
-
-    <div class="form-group">
-        <label class="col-sm-2 control-label"  for="ciudad">Ciudad:</label>
-        <div class="col-sm-10">
-            <input type="text"  class="form-control"  id="ciudad" name="ciudad" size="15" placeholder="¿Dónde vives?" />
-        </div>
-    </div>
-
-    <div class="form-group">
-        <label class="col-sm-2 control-label"  for="firma">Firma:</label>
-        <div class="col-sm-10">
-            <input type="text"  class="form-control"  id="firma" name="firma" size="15" placeholder="Ponga una firma" />
-        </div>
     </div>
 
     <div class="form-group">

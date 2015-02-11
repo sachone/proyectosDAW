@@ -38,7 +38,7 @@
         <link href="css/iconFont.min.css" rel="stylesheet">
 
         <% if (user != null) {%>
-        <link rel="stylesheet" href="css/skin/<%=user.getSkin()%>.css"> 
+        <link rel="stylesheet" href="css/skin/main.css"> 
         <% } else {%>
         <link rel="stylesheet" href="css/skin/main.css">
         <% }%>
@@ -48,7 +48,7 @@
 
         <!-- <link rel="stylesheet" href="css/jquery-ui.css"> -->
 
-        <!-- FAlTA --><link rel="stylesheet" href="css/animate.css">
+       
         <link rel="stylesheet" href="css/bootstrapValidator.min.css">
         <link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css"  />
 
@@ -101,9 +101,9 @@
 
         <div class="row">
             <!--<div class="col-md-2" id="menuLateral">
-            <jsp:include page="jsp/menuLateral.jsp" />
+           
         </div>-->
-            <div class="col-md-10 col-md-offset-1 metro">
+            <div class="col-md-12">
                 <div id="indexContenido"></div>
                 <div id="indexContenidoJsp">
                     <jsp:include page='<%=(String) request.getAttribute("contenido")%>' />                
@@ -194,6 +194,11 @@
         <script src="js/specific/tipousuario/model.js" charset="UTF-8"></script>
         <script src="js/specific/tipousuario/view.js" charset="UTF-8"></script>
         <script src="js/specific/tipousuario/routes.js" charset="UTF-8"></script>
+        
+        <script src="js/specific/proyecto/control.js" charset="UTF-8"></script>
+        <script src="js/specific/proyecto/model.js" charset="UTF-8"></script>
+        <script src="js/specific/proyecto/view.js" charset="UTF-8"></script>
+        <script src="js/specific/proyecto/routes.js" charset="UTF-8"></script>
 
         <script type="text/javascript">
 
@@ -209,6 +214,7 @@
 
                 fUsuarioRoutes();
                 fTipousuarioRoutes();
+                fProyectoRoutes();
 
                 Path.listen();
 

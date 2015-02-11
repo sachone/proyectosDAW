@@ -27,8 +27,10 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import net.daw.control.operation.generic.specific.implementation.ProyectoControlOperationGenSpImpl;
 import net.daw.control.operation.generic.specific.implementation.TipousuarioControlOperationGenSpImpl;
 import net.daw.control.operation.generic.specific.implementation.UsuarioControlOperationGenSpImpl;
+import net.daw.control.route.generic.specific.implementation.ProyectoControlRouteGenSpImpl;
 import net.daw.control.route.generic.specific.implementation.TipousuarioControlRouteGenSpImpl;
 import net.daw.control.route.generic.specific.implementation.UsuarioControlRouteGenSpImpl;
 import net.daw.helper.EstadoHelper;
@@ -89,11 +91,11 @@ public class JsonControl extends HttpServlet {
                         UsuarioControlOperationGenSpImpl oUsuarioControlOperation = new UsuarioControlOperationGenSpImpl(request);
                         jsonResult = oUsuarioRoute.execute(request, oUsuarioControlOperation);
                         break;
-                    /*case "proyecto":
-                        CentroControlRouteGenSpImpl oCentroRoute = new CentroControlRouteGenSpImpl();
-                        CentroControlOperationGenSpImpl oCentroControlOperation = new CentroControlOperationGenSpImpl(request);
-                        jsonResult = oCentroRoute.execute(request, oCentroControlOperation);
-                        break;*/
+                    case "proyecto":
+                        ProyectoControlRouteGenSpImpl oProyectoRoute = new ProyectoControlRouteGenSpImpl();
+                        ProyectoControlOperationGenSpImpl oProyectoControlOperation = new ProyectoControlOperationGenSpImpl(request);
+                        jsonResult = oProyectoRoute.execute(request, oProyectoControlOperation);
+                        break;
                     
                     default:
                         ExceptionBooster.boost(new Exception(this.getClass().getName() + ":processRequest ERROR: no such operation"));

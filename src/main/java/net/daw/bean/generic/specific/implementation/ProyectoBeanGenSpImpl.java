@@ -35,7 +35,7 @@ public class ProyectoBeanGenSpImpl extends BeanGenImpl implements BeanInterface 
     @Expose
     private String descripcion;
     @Expose
-    private Integer tags;
+    private String tags;
     @Expose
     private Date fecha;
 
@@ -63,11 +63,11 @@ public class ProyectoBeanGenSpImpl extends BeanGenImpl implements BeanInterface 
         this.descripcion = descripcion;
     }
 
-    public Integer getTags() {
+    public String getTags() {
         return tags;
     }
 
-    public void setTags(Integer tags) {
+    public void setTags(String tags) {
         this.tags = tags;
     }
 
