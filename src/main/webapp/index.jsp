@@ -32,25 +32,20 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
         <link rel="stylesheet" href="css/bootstrap.min.css">
-        <!-- Metro Bootstrapt -->
-        <link rel="stylesheet" href="css/metro-bootstrap.min.css">
-        <link rel="stylesheet" href="css/metro-bootstrap-responsive.min.css">
-        <link href="css/iconFont.min.css" rel="stylesheet">
+
+        <!-- <link rel="stylesheet" href="css/jquery-ui.css"> -->
+        <link rel="stylesheet" href="css/animate.css">
+        <link rel="stylesheet" href="css/bootstrapValidator.min.css">
+        <link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css"  />
+        <link rel="stylesheet" href="css/producto.css">
+
 
         <% if (user != null) {%>
-        <link rel="stylesheet" href="css/skin/main.css"> 
+        <link rel="stylesheet" href="css/skin/main.css">
         <% } else {%>
         <link rel="stylesheet" href="css/skin/main.css">
         <% }%>
-        <!-- Fonts -->
-        <link href='http://fonts.googleapis.com/css?family=Roboto:100' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Dancing+Script:700' rel='stylesheet' type='text/css'>
 
-        <!-- <link rel="stylesheet" href="css/jquery-ui.css"> -->
-
-       
-        <link rel="stylesheet" href="css/bootstrapValidator.min.css">
-        <link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css"  />
 
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -158,7 +153,7 @@
         <script type="text/javascript"  src="./js/vendor/language/es_ES.js"></script>
         <script type="text/javascript"  src="./js/vendor/creole-parser.js"></script>
 
-        <script type="text/javascript"  src="./js/vendor/metro.min.js"></script>
+
 
 
         <!--

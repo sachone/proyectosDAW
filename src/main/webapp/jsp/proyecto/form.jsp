@@ -131,7 +131,7 @@
                             }
 
                         },
-                        alta_group: {
+                        fecha: {
                             validators: {
                                 notEmpty: {
                                     message: 'Debe introducir una fecha de alta'
@@ -143,22 +143,11 @@
                             }
                         }
                     }
-                })
-                .on('change', '[name="id_proyecto"]', function () {
-                    $('#proyectoForm').bootstrapValidator('revalidateField', 'id_proyecto');
-                })
-
-                .on('change', '[name="id_tipoproyecto"]', function () {
-                    $('#proyectoForm').bootstrapValidator('revalidateField', 'id_tipoproyecto');
-                })
-                ;
-        $('#alta_group').on('dp.change dp.show', function (e) {
+                }),
+                
+        $('#fecha').on('dp.change dp.show', function (e) {
             // Revalidate the date when user change it
-            $('#proyectoForm').bootstrapValidator('revalidateField', 'alta_group');
-        });
-        $('#cambio_group').on('dp.change dp.show', function (e) {
-            // Revalidate the date when user change it
-            $('#proyectoForm').bootstrapValidator('revalidateField', 'cambio_group');
+            $('#proyectoForm').bootstrapValidator('revalidateField', 'fecha');
         });
     });
 
