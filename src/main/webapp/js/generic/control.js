@@ -18,6 +18,72 @@
 
 
 
+$("#btnBuscar").click(function (event) {
+    filter = $("#selectFilter option:selected").val();
+    filteroperator = $("#selectFilteroperator option:selected").val();
+    filtervalue = $("#inputFiltervalue").val();
+    window.location.href = 'jsp#/' + thisObject.clase + '/list/' + param().getUrlStringFromParamsObject(param().getUrlObjectFromParamsWithoutParamArray(objParams, ['filter', 'filteroperator', 'filtervalue'])) + "&filter=" + filter + "&filteroperator=" + filteroperator + "&filtervalue=" + filtervalue;
+    return false;
+});
+
+
+
+/*SCRIP DEL CARRUSEL*/
+var Conclave=(function(){
+    var buArr =[],arlen;
+    return {
+      init:function(){
+        this.addCN();this.clickReg();
+      },
+      addCN:function(){
+        var buarr=["holder_bu_awayL2","holder_bu_awayL1","holder_bu_center","holder_bu_awayR1","holder_bu_awayR2"];
+        for(var i=1;i<=buarr.length;++i){
+          $("#bu"+i).removeClass().addClass(buarr[i-1]+" holder_bu");
+        }
+      },
+      clickReg:function(){
+        $(".holder_bu").each(function(){
+          buArr.push($(this).attr('class'))
+        });
+        arlen=buArr.length;
+        for(var i=0;i<arlen;++i){
+          buArr[i]=buArr[i].replace(" holder_bu","")
+        };
+        $(".holder_bu").click(function(buid){
+          var me=this,id=this.id||buid,joId=$("#"+id),joCN=joId.attr("class").replace(" holder_bu","");
+          var cpos=buArr.indexOf(joCN),mpos=buArr.indexOf("holder_bu_center");
+          if(cpos!=mpos){
+              tomove=cpos>mpos?arlen-cpos+mpos:mpos-cpos;
+              while(tomove){
+                var t=buArr.shift();
+                buArr.push(t);
+                for(var i=1;i<=arlen;++i){
+                  $("#bu"+i).removeClass().addClass(buArr[i-1]+" holder_bu");
+                }
+                --tomove;
+              }
+          }
+        })
+      },
+      auto:function(){
+        for(i=1;i<=1;++i){
+          $(".holder_bu").delay(4000).trigger('click',"bu"+i).delay(4000);
+          console.log("called");
+        }
+      }
+    };
+})();
+ 
+$(document).ready(function(){
+    window['conclave']=Conclave;
+    Conclave.init();
+})
+
+/*----------------------------------------------*/
+
+
+
+
 var control = function (strClase) {
     this.clase = strClase;
 };
@@ -40,15 +106,17 @@ control.prototype.new = function (place, objParams, oModel, oView) {
         //--
     }
     oView.doEventsLoading();
-    $('#submitForm').unbind('click');
-    $('#submitForm').click(function () {
-        oView.okValidation(function (e) {
-            resultado = oModel.setOne({json: JSON.stringify(oView.getFormValues())});
-            oView.doResultOperationNotifyToUser(place, resultado["status"], "Se ha creado el registro con id=" + resultado["message"], resultado["message"], true);
-            e.preventDefault();
-            return false;
-        });
+
+    //$('#submitForm').unbind('click');
+    //$('#submitForm').click(function () {
+    oView.okValidation(function (e) {
+        resultado = oModel.setOne({json: JSON.stringify(oView.getFormValues())});
+        oView.doResultOperationNotifyToUser(place, resultado["status"], "Se ha creado el registro con id=" + resultado["message"], resultado["message"], true);
+        e.preventDefault();
+        return false;
     });
+
+    //});
 };
 control.prototype.view = function (place, id, oModel, oView) {
     $(place).empty();

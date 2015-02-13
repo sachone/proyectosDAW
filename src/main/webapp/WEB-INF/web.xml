@@ -8,6 +8,10 @@
         <servlet-name>ControlJsp</servlet-name>
         <servlet-class>net.daw.control.JspControl</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>subirImagenServlet</servlet-name>
+        <servlet-class>net.daw.control.subirImagenServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ControlJson</servlet-name>
         <url-pattern>/json</url-pattern>
@@ -15,6 +19,10 @@
     <servlet-mapping>
         <servlet-name>ControlJsp</servlet-name>
         <url-pattern>/jsp</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>subirImagenServlet</servlet-name>
+        <url-pattern>/subirImagenServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

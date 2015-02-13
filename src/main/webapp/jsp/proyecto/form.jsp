@@ -41,7 +41,7 @@
     <div class="form-group">
         <label class="col-sm-2 control-label" for="descripcion">Descripción </label> 
         <div class="col-sm-2">              
-            <textarea rows="5" cols="100" id="descripcion" class="form-control" name="descripcion"></textarea>
+            <textarea rows="5" cols="1000" id="descripcion" class="form-control" name="descripcion"></textarea>
         </div>
     </div>
 
