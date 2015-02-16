@@ -1,4 +1,4 @@
-<div class="container">
+<div class="iniciaal container">
     <div class="row">
 
         <form class="navbar-form navbar-right buscador " role="form" action="Controller" method="post" id="empresaForm">
@@ -16,11 +16,11 @@
     </div>
 
 
-    <div class="row cuerpo" >
-        <div class="col-md-12"  id="carruselCentral">
-            <div class="imgIzq"> SlideIzq </div>
-            <div class="imgCentro">slideCentro </div>
-            <div class="imgDer"> SlideDer</div>
+    <div class="row " >
+        <div class=" proyectos col-md-12">
+            <div class=" icono_proy glyphicon glyphicon-th">   
+            </div>
+
         </div>
 
 
