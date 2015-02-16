@@ -77,7 +77,10 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="jsp?ob=usuario&op=menu">Inicio <span class="sr-only">(current)</span></a></li>
+                        <li><a href="jsp?ob=usuario&op=menu">Inicio <span class="sr-only">(current)</span></a></li>
+                    </ul>
+                    <ul class="nav navbar-nav">
+                        <li><a href="jsp?ob=usuario&op=menu">Proyectos<span class="sr-only">(current)</span></a></li>
                     </ul>
                     <%if (user != null){%>
                     <ul class="nav navbar-nav navbar-left">

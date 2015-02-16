@@ -15,6 +15,7 @@
  along with this program; if not, write to the Free Software
  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 --%>
-
-<h1 class="margen-superior">Vd. ha salido del sistema</h1>
-<h4>Hasta pronto.</h4>
+<div class="margen-superiorForm">
+    <h1>Vd. ha salido del sistema</h1>
+    <h4>Hasta pronto.</h4>
+</div>
