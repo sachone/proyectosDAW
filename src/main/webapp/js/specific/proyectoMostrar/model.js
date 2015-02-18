@@ -1,5 +1,5 @@
-/*
- * Copyright (C) July 2014 Rafael Aznar
+/* 
+ * Copyright (C) 2014 rafa
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -15,19 +15,13 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  */
-package net.daw.bean.generic.specific.implementation;
 
-import net.daw.bean.generic.implementation.BeanGenImpl;
-import net.daw.bean.publicinterface.BeanInterface;
-import com.google.gson.annotations.Expose;
 
-public class TipooperacionBeanGenSpImpl extends BeanGenImpl implements BeanInterface {
-
-    public TipooperacionBeanGenSpImpl() {
-    }
-
-    public TipooperacionBeanGenSpImpl(Integer id) {
-        super(id);
-    }
-
-}
+var proyectoModel = function (strClase) {
+    this.clase = strClase;
+};
+proyectoModel.prototype = new model('proyecto');
+proyectoModel.prototype.getClassNameProyecto = function () {
+    return this.getClassName() + "Modelo";
+};
+var oProyectoModel = new proyectoModel('proyecto');

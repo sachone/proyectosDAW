@@ -83,13 +83,4 @@ function fProyectoRoutes() {
         $('#indexContenidoJsp').empty();
         return false;
     });
-    
-    
-    //Para mosrar los proyectos de la gente en el menu-----
-    Path.map("#/proyecto/mostrar").to(function () {
-        $('#indexContenidoJsp').spinner();
-        oProyectoControl.listaProyectos($('#indexContenido'), oProyectoModel, oProyectoView);
-        $('#indexContenidoJsp').empty();
-        return false;
-    });
 }

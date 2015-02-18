@@ -120,26 +120,3 @@ proyectoView.prototype.okValidation = function (f) {
     $('#proyectoForm').on('success.form.bv', f);
 };
 
-proyectoView.prototype.getProyectosList = function (jason) {
-    var long = jason.list.length;
-    listado = "<div class='row'>";
-    listado +="<div class='col-md-12'";
-    imagen = "images/mainstenance.jpg";
-    for (i = 0; i < long; i++) {
-        titulo = jason.list[i].titulo;
-        autor = jason.list[i].autor;
-        descripcion = jason.list[i].descripcion;
-        tags = jason.list[i].tags;
-        fecha = jason.list[i].fecha;
-        
-        listado += "<div class='col-md-8 proyectoCaja>";
-        listado += "<img src="+imagen+" /><br />";
-        listado += "<p>DESCRIPCIÓN:"+descripcion.replace("%20"," ")+"</p>";
-        listado += "</div>";
-    }
-    listado += "</div>";
-    listado += "</div>";
-    
-    listado += "<script type='text/javascript' src='https://code.jquery.com/jquery-2.1.1.min.js'></script>";
-    return listado;
-};

@@ -15,19 +15,15 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  */
-package net.daw.dao.generic.specific.implementation;
+package net.daw.service.generic.specific.implementation;
 
-import net.daw.dao.generic.implementation.TableDaoGenImpl;
+import net.daw.service.generic.implementation.TableServiceGenImpl;
 import java.sql.Connection;
-import net.daw.bean.generic.specific.implementation.TipooperacionBeanGenSpImpl;
-import net.daw.dao.publicinterface.MetaDaoInterface;
-import net.daw.dao.publicinterface.TableDaoInterface;
-import net.daw.dao.publicinterface.ViewDaoInterface;
 
-public class TipooperacionDaoGenSpImpl extends TableDaoGenImpl<TipooperacionBeanGenSpImpl> implements TableDaoInterface<TipooperacionBeanGenSpImpl>, ViewDaoInterface<TipooperacionBeanGenSpImpl>, MetaDaoInterface {
+public class ProyectoMostrarServiceGenSpImpl extends TableServiceGenImpl {
 
-    public TipooperacionDaoGenSpImpl(String strFuente, Connection pooledConnection) throws Exception {
-        super(strFuente, "Tipooperacion", pooledConnection);
+    public ProyectoMostrarServiceGenSpImpl(String strObject, String pojo, Connection con) {
+        super(strObject, pojo, con);
     }
 
 }

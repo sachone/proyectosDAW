@@ -1,5 +1,5 @@
-/* 
- * Copyright (C) 2014 rafa
+/*
+ * Copyright (C) July 2014 Rafael Aznar
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -15,22 +15,18 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  */
+package net.daw.dao.generic.specific.implementation;
 
-var proyectoControl = function (strClase) {
-    this.clase = strClase;
-};
-proyectoControl.prototype = new control('proyecto');
-proyectoControl.prototype.getClassNameProyecto = function () {
-    return this.getClassName() + "Control";
-};
-var oProyectoControl = new proyectoControl('proyecto');
+import net.daw.dao.generic.implementation.TableDaoGenImpl;
+import java.sql.Connection;
+import net.daw.bean.generic.specific.implementation.ProyectoBeanGenSpImpl;
 
-proyectoControl.prototype.listaProyectos = function (place, oModel, oView) {
-    var thisObject = this;
-    $(place).empty();
-    var oProyectoModel = oModel;
-    var oProyectoView = oView;
-    data = oProyectoModel.setGenericOperation("getpage&rpp=1000","");
-    listadoProyectos = oProyectoView.getProyectosList(data);
+
+public class ProyectoMostrarDaoGenSpImpl extends TableDaoGenImpl<ProyectoBeanGenSpImpl> {
+
+    public ProyectoMostrarDaoGenSpImpl(String strFuente, Connection pooledConnection) throws Exception {
+        super(strFuente, "proyectoMostrar", pooledConnection);
+    }
+
     
-};
+}
