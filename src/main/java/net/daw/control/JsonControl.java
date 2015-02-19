@@ -28,11 +28,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import net.daw.control.operation.generic.specific.implementation.ProyectoControlOperationGenSpImpl;
-import net.daw.control.operation.generic.specific.implementation.ProyectoMostrarControlOperationGenSpImpl;
 import net.daw.control.operation.generic.specific.implementation.TipousuarioControlOperationGenSpImpl;
 import net.daw.control.operation.generic.specific.implementation.UsuarioControlOperationGenSpImpl;
 import net.daw.control.route.generic.specific.implementation.ProyectoControlRouteGenSpImpl;
-import net.daw.control.route.generic.specific.implementation.ProyectoMostrarControlRouteGenSpImpl;
 import net.daw.control.route.generic.specific.implementation.TipousuarioControlRouteGenSpImpl;
 import net.daw.control.route.generic.specific.implementation.UsuarioControlRouteGenSpImpl;
 import net.daw.helper.EstadoHelper;
@@ -97,11 +95,6 @@ public class JsonControl extends HttpServlet {
                         ProyectoControlRouteGenSpImpl oProyectoRoute = new ProyectoControlRouteGenSpImpl();
                         ProyectoControlOperationGenSpImpl oProyectoControlOperation = new ProyectoControlOperationGenSpImpl(request);
                         jsonResult = oProyectoRoute.execute(request, oProyectoControlOperation);
-                        break;
-                    case "proyectomostrar":
-                        ProyectoMostrarControlRouteGenSpImpl oProyectoMostrarRoute = new ProyectoMostrarControlRouteGenSpImpl();
-                        ProyectoMostrarControlOperationGenSpImpl oProyectoMostrarControlOperation = new ProyectoMostrarControlOperationGenSpImpl(request);
-                        jsonResult = oProyectoMostrarRoute.execute(request, oProyectoMostrarControlOperation);
                         break;
 
                     default:

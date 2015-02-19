@@ -80,7 +80,7 @@
                         <li><a href="jsp?ob=usuario&op=inicio">Inicio <span class="sr-only">(current)</span></a></li>
                     </ul>
                     <ul class="nav navbar-nav">
-                        <li><a href="jsp?ob=usuario&op=menu">Proyectos<span class="sr-only">(current)</span></a></li>
+                        <li><a href="jsp#/proyecto/mostrar">Proyectos<span class="sr-only">(current)</span></a></li>
                     </ul>
                     <%if (user != null){%>
                     <ul class="nav navbar-nav navbar-left">

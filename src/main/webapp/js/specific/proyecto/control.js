@@ -26,11 +26,10 @@ proyectoControl.prototype.getClassNameProyecto = function () {
 var oProyectoControl = new proyectoControl('proyecto');
 
 proyectoControl.prototype.listaProyectos = function (place, oModel, oView) {
-    var thisObject = this;
     $(place).empty();
     var oProyectoModel = oModel;
     var oProyectoView = oView;
     data = oProyectoModel.setGenericOperation("getpage&rpp=1000","");
     listadoProyectos = oProyectoView.getProyectosList(data);
-    
+    $("#indexContenido").html(listadoProyectos);
 };

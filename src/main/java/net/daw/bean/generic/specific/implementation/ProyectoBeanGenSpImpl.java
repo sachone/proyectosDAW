@@ -38,6 +38,8 @@ public class ProyectoBeanGenSpImpl extends BeanGenImpl implements BeanInterface 
     private String tags;
     @Expose
     private Date fecha;
+    @Expose
+    private String portada;
 
     public String getTitulo() {
         return titulo;
@@ -77,6 +79,14 @@ public class ProyectoBeanGenSpImpl extends BeanGenImpl implements BeanInterface 
 
     public void setFecha(Date fecha) {
         this.fecha = fecha;
+    }
+
+    public String getPortada() {
+        return portada;
+    }
+
+    public void setPortada(String portada) {
+        this.portada = portada;
     }
     
 

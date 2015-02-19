@@ -330,4 +330,7 @@ view.prototype.doEventsLoading = function () {
 
 view.prototype.okValidation = function (f) {
     $('#' + this.clase + 'Form').on('success.form.bv', f);
-}
+};
+
+
+  

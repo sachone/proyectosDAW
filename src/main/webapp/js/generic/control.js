@@ -28,11 +28,6 @@ $("#btnBuscar").click(function (event) {
 
 
 
-/*SCRIP DEL CARRUSEL*/
-
-
-/*----------------------------------------------*/
-
 
 
 

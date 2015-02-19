@@ -37,7 +37,7 @@ proyectoView.prototype.loadButtons = function (id) {
     botonera += '</div></div>';
     return botonera;
 
-}
+};
 proyectoView.prototype.loadFormValues = function (valores, campos) {
     this.doFillForm(valores, campos);
 };
@@ -120,11 +120,13 @@ proyectoView.prototype.okValidation = function (f) {
     $('#proyectoForm').on('success.form.bv', f);
 };
 
+
+/*MOSTRAR PROYECTOS*/
 proyectoView.prototype.getProyectosList = function (jason) {
+ 
     var long = jason.list.length;
-    listado = "<div class='row'>";
-    listado +="<div class='col-md-12'";
-    imagen = "images/mainstenance.jpg";
+    listado = "<div class='row proyectosMostrar'>";
+    imagen = "'css/images/maintenance.jpg'";
     for (i = 0; i < long; i++) {
         titulo = jason.list[i].titulo;
         autor = jason.list[i].autor;
@@ -132,14 +134,14 @@ proyectoView.prototype.getProyectosList = function (jason) {
         tags = jason.list[i].tags;
         fecha = jason.list[i].fecha;
         
-        listado += "<div class='col-md-8 proyectoCaja>";
+        listado += "<div class='col-md-8 proyectoCaja'>";
         listado += "<img src="+imagen+" /><br />";
-        listado += "<p>DESCRIPCIÓN:"+descripcion.replace("%20"," ")+"</p>";
+        listado += "<p>DESCRIPCIÓN: "+descripcion+ "</p>";
         listado += "</div>";
     }
     listado += "</div>";
-    listado += "</div>";
-    
-    listado += "<script type='text/javascript' src='https://code.jquery.com/jquery-2.1.1.min.js'></script>";
     return listado;
 };
+
+/*oProyectoView.replaceAll(descripcion, "%20", " ", "%2C", ",",
+        "%C3%A1", "á","%C3%B3", "ó","%C3%A9", "é","%C3%AD", "í","%C3%BA", "ú")*/
