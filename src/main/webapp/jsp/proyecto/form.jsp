@@ -27,28 +27,28 @@
     </div>
     <div class="form-group">
         <label class="col-sm-2 control-label"  for="titulo">Titulo</label>
-        <div class="col-sm-6">
-            <input type="text" id="titulo" class="form-control"  name="titulo" size="15" placeholder="Pon aquí tu nombre de proyecto" />
+        <div class="col-sm-4">
+            <input type="text" id="titulo" class="form-control"  name="titulo" size="15" placeholder="Nombre de proyecto" />
         </div>
     </div>
     <div class="form-group">
         <label class="col-sm-2 control-label"  for="autor">Autor</label>
-        <div class="col-sm-6">
-            <input type="text" id="autor" class="form-control"  name="autor" size="15" placeholder="Pon aquí tu contraseña" />
+        <div class="col-sm-4">
+            <input type="text" id="autor" class="form-control"  name="autor" size="15" placeholder="Nombre del Autor" />
         </div>
     </div>
 
     <div class="form-group">
         <label class="col-sm-2 control-label" for="descripcion">Descripción </label> 
-        <div class="col-sm-2">              
+        <div class="col-sm-6">              
             <textarea rows="5" cols="1000" id="descripcion" class="form-control" name="descripcion"></textarea>
         </div>
     </div>
 
     <div class="form-group">
         <label class="col-sm-2 control-label" for="Tags">Tags </label> 
-        <div class="col-sm-2">              
-            <input type="text" id="tags" class="form-control"  name="tags" size="15" placeholder="Pon etiquetas" />
+        <div class="col-sm-4">              
+            <input type="text" id="tags" class="form-control"  name="tags" size="15" placeholder="Pon etiquetas separadas por comas" />
         </div>
     </div>
 
@@ -56,6 +56,12 @@
         <label class="col-sm-2 control-label"  for="fecha">Fecha</label>
         <div class="col-sm-2">
             <input type="text"  class="form-control"  id="fecha" name="fecha" size="15" placeholder="Fecha del alta" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label"  for="portada">Portada</label>
+        <div class="col-sm-5">
+            <input type="text"  class="form-control"  id="portada" name="portada" size="15" placeholder="url de la portada" />
         </div>
     </div>
 
@@ -141,6 +147,14 @@
                                     message: 'La fecha de alta no tiene formato DD/MM/YYYY'
                                 }
                             }
+                        },
+                        portada: {
+                            validators: {
+                                notEmpty: {
+                                    message: 'Debe introducir una Url de la imagen'
+                                }
+                            }
+
                         }
                     }
                 }),
