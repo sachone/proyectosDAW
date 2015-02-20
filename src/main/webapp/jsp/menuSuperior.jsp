@@ -23,6 +23,7 @@
     <ul class="dropdown-menu">
         <li class="dropdown-header">Gestión de usuarios</li>
         <li><a href="jsp#/usuario">Usuario</a></li>
+        <li><a href="jsp#/alumno">Alumnos</a></li>
         <li class="divider"></li>
         <li class="dropdown-header">Gestión de Proyectos</li>
         <li><a href="jsp#/proyecto">Proyecto</a></li>         

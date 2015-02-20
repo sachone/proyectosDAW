@@ -1,5 +1,5 @@
-/*
- * Copyright (C) July 2014 Rafael Aznar
+/* 
+ * Copyright (C) 2014 rafa
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -15,15 +15,13 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  */
-package net.daw.service.generic.specific.implementation;
 
-import net.daw.service.generic.implementation.TableServiceGenImpl;
-import java.sql.Connection;
 
-public class ProyectoMostrarServiceGenSpImpl extends TableServiceGenImpl {
-
-    public ProyectoMostrarServiceGenSpImpl(String strObject, String pojo, Connection con) {
-        super(strObject, pojo, con);
-    }
-
-}
+var alumnoModel = function (strClase) {
+    this.clase = strClase;
+};
+alumnoModel.prototype = new model('alumno');
+alumnoModel.prototype.getClassNameAlumno = function () {
+    return this.getClassName() + "Modelo";
+};
+var oAlumnoModel = new alumnoModel('alumno');

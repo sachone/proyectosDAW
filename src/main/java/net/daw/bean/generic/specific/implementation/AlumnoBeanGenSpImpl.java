@@ -21,48 +21,50 @@ import net.daw.bean.generic.implementation.BeanGenImpl;
 import net.daw.bean.publicinterface.BeanInterface;
 import com.google.gson.annotations.Expose;
 
-public class UsuarioBeanGenSpImpl extends BeanGenImpl implements BeanInterface {
+public class AlumnoBeanGenSpImpl extends BeanGenImpl implements BeanInterface {
 
     @Expose
-    private String login = "";
+    private String nombre = "";
     @Expose
-    private String password = "";
-    @Expose(serialize = false)
-    private Integer id_tipousuario = 0;
-    @Expose(deserialize = false)
-    private TipousuarioBeanGenSpImpl obj_tipousuario = null;
+    private String apellidos = "";
+    @Expose
+    private String ciclo = "";
+    @Expose
+    private String tutor = "";
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getApellidos() {
+        return apellidos;
+    }
+
+    public void setApellidos(String apellidos) {
+        this.apellidos = apellidos;
+    }
+
+    public String getCiclo() {
+        return ciclo;
+    }
+
+    public void setCiclo(String ciclo) {
+        this.ciclo = ciclo;
+    }
+
+    public String getTutor() {
+        return tutor;
+    }
+
+    public void setTutor(String tutor) {
+        this.tutor = tutor;
+    }
     
 
-    public String getLogin() {
-        return login;
-    }
-
-    public void setLogin(String login) {
-        this.login = login;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public Integer getId_tipousuario() {
-        return id_tipousuario;
-    }
-
-    public void setId_tipousuario(Integer id_tipousuario) {
-        this.id_tipousuario = id_tipousuario;
-    }
-
-    public TipousuarioBeanGenSpImpl getObj_tipousuario() {
-        return obj_tipousuario;
-    }
-
-    public void setObj_tipousuario(TipousuarioBeanGenSpImpl obj_tipousuario) {
-        this.obj_tipousuario = obj_tipousuario;
-    }
+    
 
 }

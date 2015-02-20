@@ -31,9 +31,9 @@ proyectoView.prototype.loadButtons = function (id) {
 
     var botonera = "";
     botonera += '<div class="btn-toolbar" role="toolbar"><div class="btn-group btn-group-xs">';
-    botonera += '<a class="btn btn-default view" id="' + id + '"  href="jsp#/' + this.clase + '/view/' + id + '"><i class="glyphicon glyphicon-eye-open"></i></a>';
-    botonera += '<a class="btn btn-default edit" id="' + id + '"  href="jsp#/' + this.clase + '/edit/' + id + '"><i class="glyphicon glyphicon-pencil"></i></a>';
-    botonera += '<a class="btn btn-default remove" id="' + id + '"  href="jsp#/' + this.clase + '/remove/' + id + '"><i class="glyphicon glyphicon-remove"></i></a>';
+    botonera += '<a class="btn btn-default view" id="' + id + '"  href="jsp#/' + this.clase + '/view/' + id + '"><i class="glyphicon glyphicon-th-list"></i></a>';
+    botonera += '<a class="btn btn-default edit" id="' + id + '"  href="jsp#/' + this.clase + '/edit/' + id + '"><i class="glyphicon glyphicon-file"></i></a>';
+    botonera += '<a class="btn btn-default remove" id="' + id + '"  href="jsp#/' + this.clase + '/remove/' + id + '"><i class="glyphicon glyphicon-trash"></i></a>';
     botonera += '</div></div>';
     return botonera;
 
@@ -52,9 +52,9 @@ proyectoView.prototype.getFormValues = function () {
 
 proyectoView.prototype.doEventsLoading = function () {
     var thisObject = this;
-    $('#proyectoForm #obj_estado_button').unbind('click');
-    $("#proyectoForm #obj_estado_button").click(function () {
-        var oControl = oEstadoControl;  //para probar dejar proyecto
+    $('#proyectoForm #obj_alumno_button').unbind('click');
+    $("#proyectoForm #obj_alumno_button").click(function () {
+        var oControl = oAlumnoControl;  //para probar dejar proyecto
         //vista('proyecto').cargaModalBuscarClaveAjena('#modal01', "proyecto");
 
         $("#proyectoForm").append(thisObject.getEmptyModal());
@@ -62,13 +62,13 @@ proyectoView.prototype.doEventsLoading = function () {
 
         $('#proyectoForm').append(thisObject.getEmptyModal());
 
-        oControl.list('#modal01 #modal-body', param().defaultizeUrlObjectParameters({}), true, oEstadoModel, oEstadoView);
+        oControl.list('#modal01 #modal-body', param().defaultizeUrlObjectParameters({}), true, oAlumnoModel, oAlumnoView);
         oControl.modalListEventsLoading('#modal01 #modal-body', param().defaultizeUrlObjectParameters({}), function (id) {
-            $('#obj_estado_id').val(id).change();
-            $('#obj_estado_desc').text(decodeURIComponent(oEstadoModel.getMeAsAForeignKey(id)));
+            $('#obj_alumno_id').val(id).change();
+            $('#obj_alumno_desc').text(decodeURIComponent(oAlumnoModel.getMeAsAForeignKey(id)));
             $('#modal01').modal('hide');
 
-        },oEstadoModel, oEstadoView);
+        },oAlumnoModel, oAlumnoView);
         return false;
     });
     $('#proyectoForm #obj_tipoproyecto_button').unbind('click');
@@ -129,7 +129,8 @@ proyectoView.prototype.getProyectosList = function (jason) {
     imagen = "'css/images/maintenance.jpg'";
     for (i = 0; i < long; i++) {
         titulo = jason.list[i].titulo;
-        autor = jason.list[i].autor;
+        nombre = jason.list[i].obj_alumno.nombre;
+        apellidos = jason.list[i].obj_alumno.apellidos;
         descripcion = jason.list[i].descripcion;
         tags = jason.list[i].tags;
         fecha = jason.list[i].fecha;
@@ -143,5 +144,3 @@ proyectoView.prototype.getProyectosList = function (jason) {
     return listado;
 };
 
-/*oProyectoView.replaceAll(descripcion, "%20", " ", "%2C", ",",
-        "%C3%A1", "á","%C3%B3", "ó","%C3%A9", "é","%C3%AD", "í","%C3%BA", "ú")*/

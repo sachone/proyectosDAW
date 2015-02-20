@@ -30,13 +30,13 @@
     </div>
     <div class="form-group">
         <label class="col-sm-2 control-label"  for="login">Nombre de Usuario:</label>
-        <div class="col-sm-6">
+        <div class="col-sm-4">
             <input type="text" id="login" class="form-control"  name="login" size="15" placeholder="Pon aquí tu nombre de usuario" />
         </div>
     </div>
     <div class="form-group">
         <label class="col-sm-2 control-label"  for="password">Contraseña:</label>
-        <div class="col-sm-6">
+        <div class="col-sm-4">
             <input type="text" id="password" class="form-control"  name="password" size="15" placeholder="Pon aquí tu contraseña" />
         </div>
     </div>
@@ -51,14 +51,7 @@
             <a class="btn btn-primary btn-sm" id="obj_tipousuario_button" href="#"><i class="glyphicon glyphicon-search"></i></a>
         </div>        
         <label class="col-sm-7" for="obj_usuario_desc" id="obj_tipousuario_desc"></label>                     
-    </div>
-
-    <div class="form-group">
-        <label class="col-sm-2 control-label"  for="skin">Skin:</label>
-        <div class="col-sm-10">
-            <input type="text"  class="form-control"  id="skin" name="skin" size="15" placeholder="Plantilla" />
-        </div>
-    </div>    
+    </div>  
 
     <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
@@ -98,61 +91,27 @@
                         validating: 'glyphicon glyphicon-refresh'
                     },
                     fields: {
-                        titulo: {
+                        login: {
                             validators: {
                                 notEmpty: {
-                                    message: 'Debe introducir un título'
+                                    message: 'Debe introducir algo en el login'
                                 },
                                 stringLength: {
                                     max: 255,
-                                    message: 'El título debe tener como máximo 255 caracteres'
+                                    message: 'El login debe tener como máximo 255 caracteres'
                                 }
                             }
                         },
-                        contenido: {
+                        password: {
                             validators: {
                                 notEmpty: {
-                                    message: 'Debe introducir contenido'
+                                    message: 'Debe introducir una contraseña'
+                                },
+                                stringLength: {
+                                    max: 255,
+                                    message: 'La contraseña debe tener como máximo 255 caracteres'
                                 }
                             }
-                        },
-                        alta_group: {
-                            validators: {
-                                notEmpty: {
-                                    message: 'Debe introducir una fecha de alta'
-                                },
-                                date: {
-                                    format: 'DD/MM/YYYY',
-                                    message: 'La fecha de alta no tiene formato DD/MM/YYYY'
-                                }
-                            }
-                        },
-                        cambio_group: {
-                            validators: {
-                                notEmpty: {
-                                    message: 'Debe introducir una fecha de cambio'
-                                },
-                                date: {
-                                    format: 'DD/MM/YYYY',
-                                    message: 'La fecha de cambio no tiene formato DD/MM/YYYY'
-                                }
-                            }
-                        },
-                        hits: {
-                            validators: {
-                                notEmpty: {
-                                    message: 'Debe introducir un número de hits'
-                                },
-                                integer: {
-                                    message: 'El valor de hits debe ser un entero'
-                                },
-                                between: {
-                                    min: -0,
-                                    max: 99999999,
-                                    message: 'El número de hits debe ser un entero entre 0 y 99999999'
-                                }
-                            }
-
                         },
                         id_usuario: {
                             validators: {
@@ -171,17 +130,6 @@
                                 },
                                 integer: {
                                     message: 'El identificador de tipo de usuario debe ser un entero'
-                                }
-                            }
-                        },
-                        etiquetas: {
-                            validators: {
-                                notEmpty: {
-                                    message: 'Debe introducir una etiqueta'
-                                },
-                                stringLength: {
-                                    max: 100,
-                                    message: 'La longitud de las etiquetas debe ser de 100 caracteres como mucho'
                                 }
                             }
                         }

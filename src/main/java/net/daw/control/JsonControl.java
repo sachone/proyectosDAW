@@ -27,9 +27,11 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import net.daw.control.operation.generic.specific.implementation.AlumnoControlOperationGenSpImpl;
 import net.daw.control.operation.generic.specific.implementation.ProyectoControlOperationGenSpImpl;
 import net.daw.control.operation.generic.specific.implementation.TipousuarioControlOperationGenSpImpl;
 import net.daw.control.operation.generic.specific.implementation.UsuarioControlOperationGenSpImpl;
+import net.daw.control.route.generic.specific.implementation.AlumnoControlRouteGenSpImpl;
 import net.daw.control.route.generic.specific.implementation.ProyectoControlRouteGenSpImpl;
 import net.daw.control.route.generic.specific.implementation.TipousuarioControlRouteGenSpImpl;
 import net.daw.control.route.generic.specific.implementation.UsuarioControlRouteGenSpImpl;
@@ -95,6 +97,11 @@ public class JsonControl extends HttpServlet {
                         ProyectoControlRouteGenSpImpl oProyectoRoute = new ProyectoControlRouteGenSpImpl();
                         ProyectoControlOperationGenSpImpl oProyectoControlOperation = new ProyectoControlOperationGenSpImpl(request);
                         jsonResult = oProyectoRoute.execute(request, oProyectoControlOperation);
+                        break;
+                    case "alumno":
+                        AlumnoControlRouteGenSpImpl oAlumnoRoute = new AlumnoControlRouteGenSpImpl();
+                        AlumnoControlOperationGenSpImpl oAlumnoControlOperation = new AlumnoControlOperationGenSpImpl(request);
+                        jsonResult = oAlumnoRoute.execute(request, oAlumnoControlOperation);
                         break;
 
                     default:

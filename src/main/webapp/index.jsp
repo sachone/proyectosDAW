@@ -38,13 +38,8 @@
         <link rel="stylesheet" href="css/bootstrapValidator.min.css">
         <link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css"  />
         <link rel="stylesheet" href="css/producto.css">
-
-
-        <% if (user != null) {%>
         <link rel="stylesheet" href="css/skin/main.css">
-        <% } else {%>
-        <link rel="stylesheet" href="css/skin/main.css">
-        <% }%>
+        
 
 
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -60,8 +55,8 @@
 
         <!-- Fixed navbar -->
 
-
-        <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="row">
+        <nav class="navbar navbar-inverse navbar-fixed-top col-md-12">
             <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
@@ -93,14 +88,13 @@
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
         </nav>
+</div>
 
         <% if (user != null) {%>
 
 
         <div class="row">
-            <!--<div class="col-md-2" id="menuLateral">
            
-        </div>-->
             <div class="col-md-12">
                 <div id="indexContenido"></div>
                 <div id="indexContenidoJsp">
@@ -112,7 +106,7 @@
             <div class="col-md-12" id="contenidoParseado"></div>   
         </div>
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-11">
                 <hr><footer><p class="pull-right">&copy; <%=EstadoHelper.getAutor()%>: (<%=EstadoHelper.getAnyo()%>) - <%=EstadoHelper.getLicenciaLink()%></p></footer>
             </div> 
         </div>
@@ -132,7 +126,7 @@
             <div class="col-md-12" id="contenidoParseado"></div>   
         </div>
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-11">
                 <hr><footer><p class="pull-right">&copy; <%=EstadoHelper.getAutor()%>: (<%=EstadoHelper.getAnyo()%>) - <%=EstadoHelper.getLicenciaLink()%></p></footer>
             </div>   
         </div>
@@ -156,19 +150,6 @@
         <script type="text/javascript"  src="./js/vendor/language/es_ES.js"></script>
         <script type="text/javascript"  src="./js/vendor/creole-parser.js"></script>
 
-
-
-
-        <!--
-        <script type="text/javascript"  src="./js/vendor/jquery-ui.js"></script>
-        <script src="./js/vendor/jquery.validate.min.js"></script>
-        
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
-        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-        <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
-        <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
-        -->
 
 
         <script src="js/generic/view.js" charset="UTF-8"></script>    
@@ -197,6 +178,11 @@
         <script src="js/specific/proyecto/model.js" charset="UTF-8"></script>
         <script src="js/specific/proyecto/view.js" charset="UTF-8"></script>
         <script src="js/specific/proyecto/routes.js" charset="UTF-8"></script>
+        
+        <script src="js/specific/alumno/control.js" charset="UTF-8"></script>
+        <script src="js/specific/alumno/model.js" charset="UTF-8"></script>
+        <script src="js/specific/alumno/view.js" charset="UTF-8"></script>
+        <script src="js/specific/alumno/routes.js" charset="UTF-8"></script>
 
         <script type="text/javascript">
 
@@ -213,6 +199,7 @@
                 fUsuarioRoutes();
                 fTipousuarioRoutes();
                 fProyectoRoutes();
+                fAlumnoRoutes();
 
                 Path.listen();
 

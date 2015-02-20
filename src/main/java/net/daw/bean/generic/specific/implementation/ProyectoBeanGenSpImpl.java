@@ -30,8 +30,10 @@ public class ProyectoBeanGenSpImpl extends BeanGenImpl implements BeanInterface 
 
     @Expose
     private String titulo;
-    @Expose
-    private String autor;
+    @Expose(serialize = false)
+    private Integer id_alumno = 0; //importante inicializar a 0 las claves ajenas
+    @Expose(deserialize = false)
+    private AlumnoBeanGenSpImpl obj_alumno = null;
     @Expose
     private String descripcion;
     @Expose
@@ -49,12 +51,20 @@ public class ProyectoBeanGenSpImpl extends BeanGenImpl implements BeanInterface 
         this.titulo = titulo;
     }
 
-    public String getAutor() {
-        return autor;
+    public Integer getId_alumno() {
+        return id_alumno;
     }
 
-    public void setAutor(String autor) {
-        this.autor = autor;
+    public void setId_alumno(Integer id_alumno) {
+        this.id_alumno = id_alumno;
+    }
+
+    public AlumnoBeanGenSpImpl getObj_alumno() {
+        return obj_alumno;
+    }
+
+    public void setObj_alumno(AlumnoBeanGenSpImpl obj_alumno) {
+        this.obj_alumno = obj_alumno;
     }
 
     public String getDescripcion() {
@@ -90,5 +100,4 @@ public class ProyectoBeanGenSpImpl extends BeanGenImpl implements BeanInterface 
     }
     
 
-   
 }

@@ -32,10 +32,14 @@
         </div>
     </div>
     <div class="form-group">
-        <label class="col-sm-2 control-label"  for="autor">Autor</label>
-        <div class="col-sm-4">
-            <input type="text" id="autor" class="form-control"  name="autor" size="15" placeholder="Nombre del Autor" />
+        <label class="col-sm-2 control-label" for="obj_alumno_id">Autor: </label> 
+        <div class="col-sm-2">              
+            <input readonly="true"  class="form-control"  id="obj_alumno_id" class="input-mini" name="id_alumno" type="text" size="5" maxlength="5" />  
         </div>
+        <div class="col-sm-1">              
+            <a class="btn btn-primary btn-sm" id="obj_alumno_button" href="#"><i class="glyphicon glyphicon-search"></i></a>
+        </div>        
+        <label class="col-sm-7" for="obj_alumno_desc" id="obj_alumno_desc"></label>                     
     </div>
 
     <div class="form-group">
@@ -64,6 +68,7 @@
             <input type="text"  class="form-control"  id="portada" name="portada" size="15" placeholder="url de la portada" />
         </div>
     </div>
+
 
 
 
@@ -111,14 +116,13 @@
                                 }
                             }
                         },
-                        autor: {
+                        id_alumno: {
                             validators: {
                                 notEmpty: {
-                                    message: 'Debe introducir el nombre del autor'
+                                    message: 'Debe elegir un alumno'
                                 },
-                                stringLength: {
-                                    max: 255,
-                                    message: 'El autor debe tener como máximo 255 caracteres'
+                                integer: {
+                                    message: 'El identificador de usuario debe ser un entero'
                                 }
                             }
                         },
@@ -157,10 +161,11 @@
 
                         }
                     }
-                }),
-                
+                })
+                .on('change', '[name="id_alumno"]', function () {
+                    $('#documentoForm').bootstrapValidator('revalidateField', 'id_alumno');
+                });
         $('#fecha').on('dp.change dp.show', function (e) {
-            // Revalidate the date when user change it
             $('#proyectoForm').bootstrapValidator('revalidateField', 'fecha');
         });
     });
