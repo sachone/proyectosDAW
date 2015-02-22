@@ -34,11 +34,10 @@
         <link rel="stylesheet" href="css/bootstrap.min.css">
 
         <!-- <link rel="stylesheet" href="css/jquery-ui.css"> -->
-        <link rel="stylesheet" href="css/animate.css">
         <link rel="stylesheet" href="css/bootstrapValidator.min.css">
         <link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css"  />
-        <link rel="stylesheet" href="css/producto.css">
         <link rel="stylesheet" href="css/skin/main.css">
+        <link rel="stylesheet" href="css/skin/proyectos.css">
         
 
 
@@ -77,7 +76,7 @@
                     <ul class="nav navbar-nav">
                         <li><a href="jsp#/proyecto/mostrar">Proyectos<span class="sr-only">(current)</span></a></li>
                     </ul>
-                    <%if (user != null){%>
+                    <%if (user.getId_tipousuario() ==1){%>
                     <ul class="nav navbar-nav navbar-left">
                         <jsp:include page="jsp/menuSuperior.jsp" />
                     </ul>
@@ -149,7 +148,7 @@
         <script type="text/javascript"  src="./js/vendor/bootstrapValidator.min.js"></script>
         <script type="text/javascript"  src="./js/vendor/language/es_ES.js"></script>
         <script type="text/javascript"  src="./js/vendor/creole-parser.js"></script>
-
+        
 
 
         <script src="js/generic/view.js" charset="UTF-8"></script>    

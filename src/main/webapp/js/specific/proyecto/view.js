@@ -25,8 +25,6 @@ proyectoView.prototype.getClassNameProyecto = function () {
     return this.getClassName() + "Vista";
 };
 var oProyectoView = new proyectoView('proyecto');
-
-
 proyectoView.prototype.loadButtons = function (id) {
 
     var botonera = "";
@@ -36,12 +34,10 @@ proyectoView.prototype.loadButtons = function (id) {
     botonera += '<a class="btn btn-default remove" id="' + id + '"  href="jsp#/' + this.clase + '/remove/' + id + '"><i class="glyphicon glyphicon-trash"></i></a>';
     botonera += '</div></div>';
     return botonera;
-
 };
 proyectoView.prototype.loadFormValues = function (valores, campos) {
     this.doFillForm(valores, campos);
 };
-
 proyectoView.prototype.getFormValues = function () {
     var valores = [];
     var disabled = $('#proyectoForm').find(':input:disabled').removeAttr('disabled');
@@ -49,44 +45,36 @@ proyectoView.prototype.getFormValues = function () {
     disabled.attr('disabled', 'disabled');
     return valores;
 };
-
 proyectoView.prototype.doEventsLoading = function () {
     var thisObject = this;
     $('#proyectoForm #obj_alumno_button').unbind('click');
     $("#proyectoForm #obj_alumno_button").click(function () {
-        var oControl = oAlumnoControl;  //para probar dejar proyecto
+        var oControl = oAlumnoControl; //para probar dejar proyecto
         //vista('proyecto').cargaModalBuscarClaveAjena('#modal01', "proyecto");
 
         $("#proyectoForm").append(thisObject.getEmptyModal());
         util().loadForm('#modal01', thisObject.getFormHeader('Elección de proyecto'), "", thisObject.getFormFooter(), true);
-
         $('#proyectoForm').append(thisObject.getEmptyModal());
-
         oControl.list('#modal01 #modal-body', param().defaultizeUrlObjectParameters({}), true, oAlumnoModel, oAlumnoView);
         oControl.modalListEventsLoading('#modal01 #modal-body', param().defaultizeUrlObjectParameters({}), function (id) {
             $('#obj_alumno_id').val(id).change();
             $('#obj_alumno_desc').text(decodeURIComponent(oAlumnoModel.getMeAsAForeignKey(id)));
             $('#modal01').modal('hide');
-
-        },oAlumnoModel, oAlumnoView);
+        }, oAlumnoModel, oAlumnoView);
         return false;
     });
     $('#proyectoForm #obj_tipoproyecto_button').unbind('click');
     $("#proyectoForm #obj_tipoproyecto_button").click(function () {
         var oControl = oTipoproyectoControl;
-
         $("#proyectoForm").append(thisObject.getEmptyModal());
         util().loadForm('#modal01', thisObject.getFormHeader('Elección de tipo de proyecto'), "", thisObject.getFormFooter(), true);
-
         $('#proyectoForm').append(thisObject.getEmptyModal());
-
         oControl.list('#modal01 #modal-body', param().defaultizeUrlObjectParameters({}), true, oTipoproyectoModel, oTipoproyectoView);
         oControl.modalListEventsLoading('#modal01 #modal-body', param().defaultizeUrlObjectParameters({}), function (id) {
             $('#obj_tipoproyecto_id').val(id).change();
             $('#obj_tipoproyecto_desc').text(decodeURIComponent(oTipoproyectoModel.getMeAsAForeignKey(id)));
             $('#modal01').modal('hide');
-
-        },oTipoproyectoModel, oTipoproyectoView);
+        }, oTipoproyectoModel, oTipoproyectoView);
         return false;
     });
     $('#contenido_button').unbind('click');
@@ -100,9 +88,7 @@ proyectoView.prototype.doEventsLoading = function () {
         contenido += '<textarea type="text" id="contenidomodal" name="contenido" rows="20" cols="70" placeholder="contenido"></textarea>';
         contenido += '</div><div class="col-md-6"><div id="textoparseado"></div></div>';
         contenido += '</div>';
-
         $('#proyectoForm').append(thisObject.getEmptyModal());
-
         util().loadForm('#modal01', cabecera, contenido, pie, true);
         var texto = $('#contenido').val();
         $('#contenidomodal').val(texto);
@@ -115,31 +101,33 @@ proyectoView.prototype.doEventsLoading = function () {
         return false;
     });
 };
-
 proyectoView.prototype.okValidation = function (f) {
     $('#proyectoForm').on('success.form.bv', f);
 };
-
-
 /*MOSTRAR PROYECTOS*/
-proyectoView.prototype.getProyectosList = function (jason) {
- 
-    var long = jason.list.length;
-    listado = "<div class='row proyectosMostrar'>";
+proyectoView.prototype.getProyectosList = function (json) {
+
+    var long = json.list.length;
+    listado = "<div class=' main proyectosMostrar col-md-12'>";
     imagen = "'css/images/maintenance.jpg'";
+    contador = 0;
     for (i = 0; i < long; i++) {
-        titulo = jason.list[i].titulo;
-        nombre = jason.list[i].obj_alumno.nombre;
-        apellidos = jason.list[i].obj_alumno.apellidos;
-        descripcion = jason.list[i].descripcion;
-        tags = jason.list[i].tags;
-        fecha = jason.list[i].fecha;
-        
-        listado += "<div class='col-md-8 proyectoCaja'>";
-        listado += "<img src="+imagen+" /><br />";
-        listado += "<p>DESCRIPCIÓN: "+descripcion+ "</p>";
-        listado += "</div>";
+        id = json.list[i].id;
+        titulo = json.list[i].titulo;
+        nombre = json.list[i].obj_alumno.nombre;
+        apellidos = json.list[i].obj_alumno.apellidos;
+        descripcion = json.list[i].descripcion;
+        tags = json.list[i].tags;
+        fecha = json.list[i].fecha;
+        listado += "<div class='proyectosCaja ver view-third col-md-4'>";
+        listado += "<img src=" + imagen + ">";
+        listado += "<div class='mask'>";
+        listado += "<h2>" + titulo + "</h2>";
+        listado += "<p>" + descripcion + "</p>";
+        listado += '<a class="info" id="' + id + '"  href="jsp#/' + this.clase + '/view/' + id + '">Leer mar</a>';;
+        listado += "</div></div>";
     }
+
     listado += "</div>";
     return listado;
 };

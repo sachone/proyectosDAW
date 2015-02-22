@@ -16,21 +16,6 @@
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  */
 
-
-
-$("#btnBuscar").click(function (event) {
-    filter = $("#selectFilter option:selected").val();
-    filteroperator = $("#selectFilteroperator option:selected").val();
-    filtervalue = $("#inputFiltervalue").val();
-    window.location.href = 'jsp#/' + thisObject.clase + '/list/' + param().getUrlStringFromParamsObject(param().getUrlObjectFromParamsWithoutParamArray(objParams, ['filter', 'filteroperator', 'filtervalue'])) + "&filter=" + filter + "&filteroperator=" + filteroperator + "&filtervalue=" + filtervalue;
-    return false;
-});
-
-
-
-
-
-
 var control = function (strClase) {
     this.clase = strClase;
 };

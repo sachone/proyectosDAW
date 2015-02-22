@@ -108,6 +108,7 @@ public class JsonControl extends HttpServlet {
                         ExceptionBooster.boost(new Exception(this.getClass().getName() + ":processRequest ERROR: no such operation"));
                 }
             } else {
+                
                 jsonResult = "{\"error\" : \"No active server session\"}";
             }
             if (jsonResult.equals("error")) {

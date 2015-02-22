@@ -51,9 +51,7 @@ margin-top: 5px;
 
        
 }
-footer{
-    margin-right: 10px;
-}
+
 
 /*formulario de entrada*/
 .formLogueo{
@@ -106,11 +104,13 @@ footer{
 }.proyectoCaja{
     margin-top: 30px;
     margin-left: 10px;
-    background-color: #262626;
-    width: 400px;
-    color:white;
+    
 }
 
+#cdawrap{
+    display: none;
+        
+}
 /*----------------------------------------*/
 
 

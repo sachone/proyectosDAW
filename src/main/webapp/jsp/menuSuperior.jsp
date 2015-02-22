@@ -17,7 +17,9 @@
 --%>
 
 
-
+<ul class="nav navbar-nav">
+ <li><a href="jsp#/proyecto/mostrar">Proyectos<span class="sr-only">(current)</span></a></li>
+ </ul>
 <li class="dropdown">
     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Panel de Administracion <b class="caret"></b></a>
     <ul class="dropdown-menu">
