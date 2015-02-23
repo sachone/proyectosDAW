@@ -111,7 +111,7 @@
 }
 
 .ver {
-   width: 400px;
+   width: 350px;
    height: 250px;
    margin: 10px;
    float: left;
@@ -126,7 +126,7 @@
    background: #fff url(../images/bgimg.jpg) no-repeat center center;
 }
 .ver .mask,.view .content {
-   width: 400px;
+   width: 350px;
    height: 250px;
    position: absolute;
    overflow: hidden;
